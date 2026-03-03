@@ -166,6 +166,7 @@ function readRecipes() {
 }
 
 function writeRecipes(recipes) {
+  fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true });
   fs.writeFileSync(DATA_FILE, JSON.stringify(recipes, null, 2), 'utf8');
 }
 
